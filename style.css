@@ -1,0 +1,628 @@
+:root {
+    --body-background: #0e0e0e;
+    --color-logo: #ff5b50;
+    --card-color: #252525;
+    --text-color: #fff;
+    --subtitle-color: #5a5757;
+    --black-text: #000;
+    --color-input: #0D0D0D;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--body-background);
+}
+
+.container {
+    width: 100%;
+}
+
+.page-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 0 87px;
+}
+
+.banner {
+    background-image: url(./assets/background.png);
+    background-position-y: center;
+    background-position-x: center;
+}
+
+li {
+    list-style: none;
+}
+
+p, buttom, a, h1, h2, h3, button{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+  
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-logo);
+    border: 1px solid transparent;
+}
+
+.container .page-wrap h1 {
+    font-size: 2rem;
+}
+
+.container .page-wrap h1 span{
+    color: var(--color-logo);
+}
+
+/* ------------- Header ------------- */
+
+header .container .page-wrap {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    padding-top: 60px;
+}
+
+header .container .page-wrap img {
+    height: 22px;
+}
+
+header .container .page-wrap nav {
+    padding-right: 30px;
+}
+
+header .container .page-wrap nav ol a li {
+    position: relative;
+}
+
+header .container .page-wrap nav ol a li:hover:before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-logo);
+    width: 100%;
+    height: 2.8px;
+    bottom: -3px;
+    border-radius: 2px;
+}
+
+header .container .page-wrap nav ol{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+}
+
+header .container .page-wrap a button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--text-color);
+    color: var(--body-background);
+    font-weight: 700;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 22px;
+    cursor: pointer;
+}
+
+/* ------------- Banner ------------- */
+
+.banner-conteudo .container .page-wrap {
+    align-items: center;
+    padding: 120px 80px;
+    gap: 38px;
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas {
+    position: relative;
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas img:nth-child(1) {
+    height: 60px;
+    margin-right: 80px;
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas img:nth-child(2) {
+    position: absolute;
+    height: 60px;
+    left: 0;
+    z-index: 4;
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas img:nth-child(3) {
+    position: absolute;
+    height: 60px;
+    left: 25px;
+    z-index: 3;
+    animation: transition-1 1s ease-in-out;
+}
+
+@keyframes transition-1 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 25px;
+    }
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas img:nth-child(4) {
+    position: absolute;
+    height: 60px;
+    left: 50px;
+    z-index: 2;
+    animation: transition-2 1s ease-in-out;
+}
+
+@keyframes transition-2 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50px;
+    }
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas .imagens-artistas img:nth-child(5) {
+    position: absolute;
+    height: 60px;
+    left: 75px;
+    z-index: 1;
+    animation: transition-3 1s ease-in-out;
+}
+
+@keyframes transition-3 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 75px;
+    }
+}
+
+.banner-conteudo .container .page-wrap .breve-sobre .dados-artistas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.banner-conteudo .container .page-wrap .titulo h1 {
+    font-weight: 700;
+    font-size: 45px;
+    padding-right: 30px;
+}
+
+.banner-conteudo .container .page-wrap .titulo h1 span{
+    color: var(--color-logo);
+}
+
+.banner-conteudo .container .page-wrap .selo img{
+    height: 160px;
+    animation: giro-completo 10s infinite linear;
+}
+
+@keyframes giro-completo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* ------------- Galeria ------------- */
+
+.galeria .container .page-wrap{
+    display: grid;
+    padding-bottom: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: dense;
+    row-gap: 40px;
+}
+
+.galeria .container .page-wrap img {
+    border: 0.2px solid white;
+    height: 165px;
+    border-radius: 2px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+
+.galeria .container .page-wrap img:hover {
+    -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
+/* ------------- Informação ------------- */
+
+.informacao .container .page-wrap {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.informacao .container .page-wrap .contador {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    justify-content: center;
+    position: relative;
+    padding: 130px 67px;
+}
+
+.informacao .container .page-wrap .contador::after {
+    content: "";
+    position: absolute;
+    background-color: var(--subtitle-color);
+    width: 1px;
+    height: 100%;
+    right: 0;
+}
+
+.informacao .container .page-wrap::before {
+    content: "";
+    position: absolute;
+    background-color: var(--subtitle-color);
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+}
+
+.informacao .container .page-wrap .contador div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacao .container .page-wrap .contador div p {
+    color: var(--subtitle-color);
+}
+
+.informacao .container .page-wrap .contador div h1{
+    font-size: 36px;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 71px;
+    justify-content: flex-end;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem .texto {
+    display: flex;
+    gap: 126px;
+    padding: 0 71px;
+    padding-top: 71px;
+    justify-content: center;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem .texto div{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem .texto div p{
+    width: 350px;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem .texto div a {
+    color: var(--color-logo);
+    text-decoration: underline;
+}
+
+.informacao .container .page-wrap .caixa-texto-imagem .imagem img {
+    width: 100%;
+    height: 100%; 
+}
+
+/* ------------- Populares da Semana ------------- */
+
+.populares-da-semana .container .page-wrap {
+    flex-direction: column;
+    gap: 124px;
+    padding-top: 130px;
+}
+
+.populares-da-semana .container .page-wrap .tabela-astronautas::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: var(--subtitle-color);
+    right: 50%;
+    border-radius: 2px;
+}
+
+.populares-da-semana .container .page-wrap .tabela-astronautas {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.populares-da-semana .container .page-wrap .tabela-astronautas .conjunto-1, .conjunto-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.astronauta-1, .astronauta-2, .astronauta-3, .astronauta-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.distancia-tema-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.tema-astronauta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tema-astronauta img {
+    height: 16px;
+}
+
+.tema-astronauta h2{
+    font-size: 24px;
+}
+
+.subtitulo-astronauta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitulo-astronauta .nome-vendedor {
+    color: var(--subtitle-color);
+}
+
+.subtitulo-astronauta .preco-do-vendedor {
+    color: var(--color-logo);
+}
+
+/* ------------- Melhores Artistas ------------- */
+
+.melhores-artistas .container .page-wrap {
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    padding-top: 87px;
+    padding-bottom: 87px;
+}
+
+.melhores-artistas .container .page-wrap h1 {
+    width: 250px;
+}
+
+.melhores-artistas .container .page-wrap .galeria-melhores-artistas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 40px;
+}
+
+.melhores-artistas .container .page-wrap .artista {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--card-color);
+    padding: 25px 32px;
+    height: 100px;
+    justify-content: center;
+    width: 250px;
+    transition: 0.5s ease-out;
+}
+
+.melhores-artistas .container .page-wrap .artista .informacao-melhor-artista .quantidade-fotografia-melhor-artista {
+    color: var(--color-logo);
+}
+
+.melhores-artistas .container .page-wrap .artista:hover {
+    background-color: var(--color-logo);
+}
+
+.melhores-artistas .container .page-wrap .artista:hover .quantidade-fotografia-melhor-artista {
+    color: var(--text-color);
+}
+
+.melhores-artistas .container .page-wrap a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ------------- Footer ------------- */
+
+footer .container .page-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--card-color);
+    padding-top: 87px;
+}
+
+footer .container .page-wrap .email-links{
+    display: flex;
+    gap: 40px;
+}
+
+footer .container .page-wrap .marca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    padding-left: 87px; 
+    padding-right: 87px;
+}
+
+footer .container .page-wrap .link-sociais {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 80px 87px;
+    padding-bottom: 40px;
+    
+}
+
+footer .container .page-wrap .link-sociais::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 200%;
+    top: 0;
+    left: -50%;
+    background-color: var(--subtitle-color);
+}
+
+footer .container .page-wrap .email-links {
+    display: flex;
+    position: relative;
+    padding: 80px 87px;
+    padding-right: 0px;
+    padding-bottom: 40px;
+}
+
+footer .container .page-wrap .email-links .link::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 200%;
+    top: 0;
+    left: -50%;
+    background-color: var(--subtitle-color);
+}
+
+footer .container .page-wrap .email-links .link {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    justify-content: center;
+}
+
+footer .container .page-wrap .email-links .link div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer .container .page-wrap .email-links .link div a {
+    color: var(--subtitle-color);
+    transition: all .3s;
+}
+
+footer .container .page-wrap .email-links .link div a:hover {
+    color: var(--color-logo);
+}
+
+footer .container .page-wrap .email-links .email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 80px;
+    position: relative;
+}
+
+footer .container .page-wrap .email-links .email::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -55%;
+    height: 211%;
+    width: 1px;
+    background-color: var(--subtitle-color);
+}
+
+footer .container .page-wrap .email-links .email h1 {
+    width: 220px;
+    font-size: 20px;
+}
+
+footer .container .page-wrap .email-links .email .input-email {
+    display: flex;
+}
+
+footer .container .page-wrap .email-links .email .input-email input {
+    border: none;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-input);
+    color: var(--subtitle-color);
+    font-size: 16px;
+}
+
+footer .container .page-wrap .email-links .email .input-email button {
+    padding: 22px 26px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black-text);
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer .container .page-wrap .email-links .email .input-email input:focus {
+    box-shadow: 0;
+    outline: 0;
+}
+
+footer .container .page-wrap .marca button {
+    border: none;
+    display: flex;
+    background-color: var(--color-logo);
+    padding: 22px 24px;
+    cursor: pointer;
+}
+
+footer .container .page-wrap .marca button img {
+    height: 16px;
+}
+
+footer .container .page-wrap .link-sociais .redes-sociais {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+footer .container .page-wrap .link-sociais .redes-sociais img {
+    height: 24px;
+}
+
+footer .container .page-wrap .link-sociais a {
+    color: var(--subtitle-color);
+}
+
+footer .container .page-wrap .link-sociais a:hover {
+    color: var(--color-logo);
+}
